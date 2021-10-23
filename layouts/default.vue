@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <h2>Default layout content:</h2>
-
+  <div class="default-layout">
     <slot />
   </div>
 </template>
