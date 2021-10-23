@@ -8,11 +8,17 @@
     "deploy": "components deploy"
   },
   "devDependencies": {
+    "autoprefixer": "^10.3.7",
     "eslint": "7.12.1",
     "eslint-config-standard": "^16.0.3",
     "eslint-plugin-import": "2.22.1",
     "eslint-plugin-node": "11.1.0",
     "eslint-plugin-promise": "4.2.1",
-    "nuxt3": "latest"
+    "nuxt3": "latest",
+    "postcss": "^8.3.11",
+    "tailwindcss": "^2.2.17"
+  },
+  "dependencies": {
+    "@headlessui/vue": "^1.4.1"
   }
 }
