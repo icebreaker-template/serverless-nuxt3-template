@@ -3,8 +3,7 @@
   "scripts": {
     "dev": "nuxt dev",
     "build": "nuxt build",
-    "start": "node .output/server/index.mjs",
-    "copy": "node scripts/cp.js",
+    "start": "cross-env NUXT_PORT=9000 node .output/server/index.mjs",
     "deploy": "components deploy"
   },
   "devDependencies": {
@@ -20,6 +19,6 @@
     "tailwindcss": "^2.2.17"
   },
   "dependencies": {
-    "@headlessui/vue": "^1.4.1"
+    "cross-env": "^7.0.3"
   }
 }

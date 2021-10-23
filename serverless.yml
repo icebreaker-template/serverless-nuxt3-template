@@ -25,7 +25,7 @@ inputs:
   description: This is a nuxt3 ssr function.
   memorySize: 256 # 内存大小，单位MB
   timeout: 20 # 函数执行超时时间，单位秒
-  initTimeout: 3 # 初始化超时时间，单位秒
+  # initTimeout: 3 # 初始化超时时间，单位秒
   environment: #  环境变量
     variables: #  环境变量对象
       NODE_ENV: production
@@ -41,8 +41,8 @@ inputs:
   #     remoteMountDir: /
   image: # 镜像配置
     # registryId: tcr-xxx # 容器镜像服务名称，企业版必须
-  imageType: personal # 镜像类型：personal - 个人，enterprise - 企业版，public - 镜像模板
-  imageUrl: ${env:IMAGE_URI}
+    imageType: personal # 镜像类型：personal - 个人，enterprise - 企业版，public - 镜像模板
+    imageUrl: ${env:IMAGE_URI}
   events: # 触发器
     - apigw: # api网关触发器，已有apigw服务，配置触发器
         parameters:
