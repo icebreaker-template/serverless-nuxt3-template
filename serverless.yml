@@ -1,0 +1,61 @@
+#应用组织信息
+# app: '' # 应用名称。留空则默认取当前组件的实例名称为app名称。
+stage: 'dev' # 环境名称。默认值是 dev。建议使用${env.STAGE}变量定义环境名称
+
+#组件信息
+component: scf # (必选) 组件名称，在该实例中为scf
+name: web-ssr-nuxt3-scf # (必选) 组件实例名称。
+
+#组件参数配置
+inputs:
+  # name: scfdemo # 云函数名称，默认为 ${name}-${stage}-${app}
+  namespace: default
+  # role: exRole # 云函数执行角色
+  # 1. 默认写法，新建特定命名的 cos bucket 并上传
+  # src: ./src
+  # 2. src 为对象，并且制定忽略上传文件夹 node_modules
+  src:
+    src: ./.output
+    exclude:
+      - 'node_modules/**'
+  type: web # 函数类型，默认为 event(事件类型)，web(web类型)
+  entryFile: server/index.mjs #入口文件名（代码中无scf_bootstrap文件，且函数类型为web类型时生效）
+  runtime: Nodejs12.16 # 运行环境 默认 Nodejs10.15
+  region: ap-shanghai # 函数所在区域
+  description: This is a nuxt3 ssr function.
+  memorySize: 256 # 内存大小，单位MB
+  timeout: 20 # 函数执行超时时间，单位秒
+  initTimeout: 3 # 初始化超时时间，单位秒
+  environment: #  环境变量
+    variables: #  环境变量对象
+      NODE_ENV: production
+  publicAccess: true # 是否开启公网访问
+  installDependency: true # 是否在线安装依赖
+  # vpcConfig: # 私有网络配置
+  #   vpcId: vpc-xxx # 私有网络的Id
+  #   subnetId: subnet-xxx # 子网ID
+  # cfs: # cfs配置
+  #   - cfsId: cfs-123
+  #     mountInsId: cfs-123
+  #     localMountDir: /mnt/
+  #     remoteMountDir: /
+  # deadLetter: # 死信队列配置
+  #   type: deadLetterType
+  #   name: deadLetterName
+  #   filterType: deadLetterFilterType
+  # layers: #layer配置
+  #   - name: scfLayer #  layer名称
+  #     version: 1 #  版本
+  events: # 触发器
+    - apigw: # api网关触发器，已有apigw服务，配置触发器
+        parameters:
+          serviceName: nuxt3_serverless_ssr
+          protocols:
+            - http
+          netTypes:
+            - OUTER
+          description: nuxt3-serverless-ssr service
+          environment: release
+          endpoints:
+            - path: /
+              method: ANY
