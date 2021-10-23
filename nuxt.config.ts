@@ -15,6 +15,6 @@ export default defineNuxtConfig({
         }
       }
     },
-    transpile: ['@headlessui/vue']
+    // transpile: ['@headlessui/vue']
   }
 })

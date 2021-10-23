@@ -2,6 +2,14 @@
 
 serverless-nuxt3-template
 
+## Demo url
+
+[http://service-r8k90std-1257725330.sh.apigw.tencentcs.com/](http://service-r8k90std-1257725330.sh.apigw.tencentcs.com/)
+
+Host by Tencent Cloud SCF
+
+## Quick Start
+
 `npx nuxi init nuxt3-app`
 
 出现初始化失败，可以直接去 [https://github.com/nuxt/starter/tree/v3](https://github.com/nuxt/starter/tree/v3) 下载
