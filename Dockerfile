@@ -5,6 +5,8 @@ WORKDIR /usr/src/app
 
 COPY package.json yarn.lock /usr/src/app/
 
+RUN yarn --prod
+
 COPY ./.output /usr/src/app/.output
 
 EXPOSE 9000

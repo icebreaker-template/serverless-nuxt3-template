@@ -1,0 +1,1 @@
+Nuxt 3 supports composables/ directory to auto import your Vue composables into your application and use using auto imports!
