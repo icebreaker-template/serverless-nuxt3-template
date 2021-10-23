@@ -3,7 +3,7 @@
   "scripts": {
     "dev": "nuxt dev",
     "build": "nuxt build",
-    "start": "cross-env NUXT_PORT=9000 node .output/server/index.mjs",
+    "start": "cross-env NUXT_PORT=9000 NUXT_HOST=0.0.0.0 node .output/server/index.mjs",
     "deploy": "components deploy"
   },
   "devDependencies": {
