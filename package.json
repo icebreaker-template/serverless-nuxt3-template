@@ -3,22 +3,23 @@
   "scripts": {
     "dev": "nuxt dev",
     "build": "nuxt build",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
     "start": "cross-env NUXT_PORT=9000 NUXT_HOST=0.0.0.0 node .output/server/index.mjs",
     "deploy": "components deploy"
   },
   "devDependencies": {
-    "autoprefixer": "^10.3.7",
-    "eslint": "7.12.1",
-    "eslint-config-standard": "^16.0.3",
-    "eslint-plugin-import": "2.22.1",
-    "eslint-plugin-node": "11.1.0",
-    "eslint-plugin-promise": "4.2.1",
-    "nuxt3": "latest",
-    "postcss": "^8.3.11",
-    "sass": "^1.43.3",
-    "tailwindcss": "^2.2.17"
+    "autoprefixer": "^10.4.7",
+    "cross-env": "^7.0.3",
+    "eslint": "8.17.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "2.26.0",
+    "eslint-plugin-n": "^15.2.2",
+    "eslint-plugin-promise": "6.0.0",
+    "nuxt": "^3.0.0-rc.4",
+    "postcss": "^8.4.14",
+    "sass": "^1.52.3",
+    "tailwindcss": "^3.1.2"
   },
-  "dependencies": {
-    "cross-env": "^7.0.3"
-  }
+  "dependencies": {}
 }

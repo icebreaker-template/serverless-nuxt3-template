@@ -1,7 +1,7 @@
-import { defineNuxtConfig } from 'nuxt3'
+import { defineNuxtConfig } from "nuxt";
 
 export default defineNuxtConfig({
-  css: ['assets/scss/index.scss'],
+  css: ["assets/scss/index.scss"],
   // NUXT_PORT
   // server: {
   //   port: 9000
@@ -11,10 +11,10 @@ export default defineNuxtConfig({
       postcssOptions: {
         plugins: {
           tailwindcss: {},
-          autoprefixer: {}
-        }
-      }
+          autoprefixer: {},
+        },
+      },
     },
     // transpile: ['@headlessui/vue']
-  }
-})
+  },
+});
